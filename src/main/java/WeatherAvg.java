@@ -1,4 +1,4 @@
-public class Weather {
+public class WeatherAvg {
 
     private int weatherId;
     private int cityId;
@@ -7,5 +7,4 @@ public class Weather {
     private double humidity;
     private double windDeg;
     private double windSpeed;
-    private String service;
 }
