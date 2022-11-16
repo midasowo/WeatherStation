@@ -1,3 +1,5 @@
+package pl.sda.model;
+
 public class City {
 
     private int id;
