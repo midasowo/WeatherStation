@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Weather {
-
+@Id
     @Column(name = "weather_id")
     private int weatherId;
 
@@ -13,7 +13,7 @@ public class Weather {
     private City cityId;
 
     @Column(name = "temperature")
-    private double temperature;
+    private double temp;
 
     @Column(name = "pressure")
     private double pressure;
@@ -37,7 +37,7 @@ public class Weather {
     public Weather(int weatherId, City cityId, double temperature, double pressure, double humidity, double windDeg, double windSpeed, String service) {
         this.weatherId = weatherId;
         this.cityId = cityId;
-        this.temperature = temperature;
+        this.temp = temperature;
         this.pressure = pressure;
         this.humidity = humidity;
         this.windDeg = windDeg;
@@ -61,11 +61,11 @@ public class Weather {
     }
 
     public double getTemperature() {
-        return temperature;
+        return temp;
     }
 
     public void setTemperature(double temperature) {
-        this.temperature = temperature;
+        this.temp = temperature;
     }
 
     public double getPressure() {
@@ -113,7 +113,7 @@ public class Weather {
         return "Weather{" +
                 "weatherId=" + weatherId +
                 ", cityId=" + cityId +
-                ", temperature=" + temperature +
+                ", temperature=" + temp +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
                 ", windDeg=" + windDeg +
