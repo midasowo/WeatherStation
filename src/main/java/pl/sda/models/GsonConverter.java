@@ -1,4 +1,4 @@
-package pl.sda.model;
+package pl.sda.models;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -21,7 +21,7 @@ public class GsonConverter {
 
             //Weather weatherFromJson = gson.fromJson(reader, Weather.class);
             // convert JSON array to list of users
-            List<Weather> weatherFromJson = new Gson().fromJson(reader, new TypeToken<List<Weather>>(){}.getType());
+            List<Weather> weatherFromJson = gson.fromJson(reader, new TypeToken<List<Weather>>() {}.getType());
 
             // print users
             weatherFromJson.forEach(System.out::println);
