@@ -23,7 +23,7 @@ public class ApplicationPropertiesProvider {
         throw new UnsupportedOperationException();
     }
 
-    public static Properties getWorldProperties() {
+    public static Properties getSql7573592Properties() {
         return sql7573592Properties;
     }
 
