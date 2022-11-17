@@ -1,0 +1,15 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="WeatherStationPU">
+        <class>pl.sda.models.JsonNode</class>
+        <class>pl.sda.models.City</class>
+        <class>pl.sda.models.WeatherAvg</class>
+        <class>pl.sda.models.Coord</class>
+        <class>pl.sda.models.Weather</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

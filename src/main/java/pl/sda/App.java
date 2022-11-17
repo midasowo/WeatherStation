@@ -1,7 +1,9 @@
 package pl.sda;
 
+import dao.SentToDB;
 import pl.sda.models.GsonMapper;
 import pl.sda.models.JsonNode;
+import pl.sda.utils.ApplicationPropertiesProvider;
 import pl.sda.utils.FileReader;
 
 import java.io.File;
@@ -20,11 +22,8 @@ public class App {
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
 
 
-        System.out.println(gsonJson.get(0).getCoord().getLon());
-        System.out.println(gsonJson.get(0).getCoord().getLat());
-        System.out.println(gsonJson.get(1).getWeather().getWindSpeed());
-        System.out.println(gsonJson.get(2).getWeather().getWindSpeed());
-        System.out.println(gsonJson.get(3).getWeather().getWindSpeed());
+        SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
+
         gsonJson.forEach(System.out::println);
 
     }
