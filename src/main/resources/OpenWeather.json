@@ -4,13 +4,13 @@
       "lon": 21.0175,
       "lat": 52.237
     },
-    "weather":[ {
+    "weather": {
       "temp": 5.96,
       "pressure": 1012,
       "humidity": 91,
-      "wind_speed": 2.06,
-      "wind_deg": 20
-    }],
+      "windSpeed": 2.06,
+      "windDeg": 20
+    },
     "city": {
       "name": "Warszawa",
       "country": "PL"
@@ -25,8 +25,8 @@
       "temp": 5.09,
       "pressure": 1011,
       "humidity": 76,
-      "wind_speed": 1.79,
-      "wind_deg": 22
+      "windSpeed": 1.79,
+      "windDeg": 22
     },
     "city": {
       "name": "Łódź",
@@ -42,8 +42,8 @@
       "temp": 5.67,
       "pressure": 1013,
       "humidity": 97,
-      "wind_speed": 1.03,
-      "wind_deg": 30
+      "windSpeed": 1.03,
+      "windDeg": 30
     },
     "city": {
       "name": "Gdańsk",
@@ -59,8 +59,8 @@
       "temp": 7.62,
       "pressure": 1006,
       "humidity": 117,
-      "wind_speed": 3.23,
-      "wind_deg": 25
+      "windSpeed": 3.23,
+      "windDeg": 25
     },
     "city": {
       "name": "Kraków",
