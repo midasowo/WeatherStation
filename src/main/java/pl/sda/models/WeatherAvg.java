@@ -1,4 +1,4 @@
-package pl.sda.model;
+package pl.sda.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
