@@ -3,9 +3,12 @@ package pl.sda.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "weather")
 public class Weather {
-@Id
+
+    @Id
     @Column(name = "weather_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int weatherId;
 
     @OneToOne
@@ -34,9 +37,7 @@ public class Weather {
         return weatherId;
     }
 
-    public Weather(int weatherId, City cityId, double temperature, double pressure, double humidity, double windDeg, double windSpeed, String service) {
-        this.weatherId = weatherId;
-        this.cityId = cityId;
+    public Weather(double temperature, double pressure, double humidity, double windDeg, double windSpeed, String service) {
         this.temp = temperature;
         this.pressure = pressure;
         this.humidity = humidity;

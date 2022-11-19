@@ -1,17 +1,11 @@
 package pl.sda.models;
 
-import java.util.List;
-
 public class JsonNode {
     private Coord coord;
     private Weather weather;
+    private City city;
 
     public JsonNode() {
-    }
-
-    public JsonNode(Coord coord,Weather weather) {
-        this.coord = coord;
-        this.weather = weather;
     }
 
     public Coord getCoord() {
@@ -30,11 +24,20 @@ public class JsonNode {
         this.weather = weather;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
     @Override
     public String toString() {
         return "JsonNode{" +
                 "coord=" + coord +
                 ", weather=" + weather +
+                ", city=" + city +
                 '}';
     }
 }

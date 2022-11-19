@@ -21,11 +21,9 @@ public class SentToDB {
             entityManager.getTransaction().begin();
 
             for (JsonNode jsonNode : gsonJson) {
-                entityManager.persist(jsonNode);
+                entityManager.persist(jsonNode.getWeather());
             }
-
             entityManager.getTransaction().commit();
-
             return true;
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
