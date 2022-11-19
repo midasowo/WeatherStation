@@ -17,15 +17,20 @@ public class City {
     @Column(name = "country")
     private String country;
 
-    @Embedded
-    private Coord coord;
+    @Column(name = "lat")
+    private double lat;
+
+    @Column(name = "lon")
+    private double lon;
 
     public City() {
     }
 
-    public City(String name, String country) {
+    public City(String name, String country, double lat, double lon) {
         this.name = name;
         this.country = country;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     public int getId() {
@@ -52,11 +57,29 @@ public class City {
         this.country = country;
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
     @Override
     public String toString() {
         return "City{" +
                 "name='" + name + '\'' +
                 ", country='" + country + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
                 '}';
     }
 }

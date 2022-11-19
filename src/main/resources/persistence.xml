@@ -3,7 +3,6 @@
         <class>pl.sda.models.JsonNode</class>
         <class>pl.sda.models.City</class>
         <class>pl.sda.models.WeatherAvg</class>
-        <class>pl.sda.models.Coord</class>
         <class>pl.sda.models.Weather</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

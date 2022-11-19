@@ -112,9 +112,7 @@ public class Weather {
     @Override
     public String toString() {
         return "Weather{" +
-                "weatherId=" + weatherId +
-                ", cityId=" + cityId +
-                ", temperature=" + temp +
+                "temp=" + temp +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
                 ", windDeg=" + windDeg +

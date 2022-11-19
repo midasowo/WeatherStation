@@ -1,19 +1,10 @@
 package pl.sda.models;
 
 public class JsonNode {
-    private Coord coord;
     private Weather weather;
     private City city;
 
     public JsonNode() {
-    }
-
-    public Coord getCoord() {
-        return coord;
-    }
-
-    public void setCoord(Coord coord) {
-        this.coord = coord;
     }
 
     public Weather getWeather() {
@@ -35,8 +26,7 @@ public class JsonNode {
     @Override
     public String toString() {
         return "JsonNode{" +
-                "coord=" + coord +
-                ", weather=" + weather +
+                "weather=" + weather +
                 ", city=" + city +
                 '}';
     }

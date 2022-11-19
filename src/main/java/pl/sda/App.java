@@ -21,13 +21,8 @@ public class App {
         //Map json to object
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
 
-        System.out.println(gsonJson.get(0).getWeather());
-
-
-//        gsonJson.forEach(System.out::println);
+        gsonJson.forEach(System.out::println);
         SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
-
-//        gsonJson.forEach(System.out::println);
 
     }
 }
