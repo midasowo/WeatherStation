@@ -1,13 +1,12 @@
 package pl.sda.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "weatheravg")
 public class WeatherAvg {
 
+    @Id
     @Column(name = "weather_id")
     private int weatherId;
 

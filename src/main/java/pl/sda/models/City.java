@@ -3,10 +3,11 @@ package pl.sda.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "city")
 public class City {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -15,6 +16,9 @@ public class City {
 
     @Column(name = "country")
     private String country;
+
+    @Embedded
+    private Coord coord;
 
     public City() {
     }
@@ -46,5 +50,13 @@ public class City {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                '}';
     }
 }

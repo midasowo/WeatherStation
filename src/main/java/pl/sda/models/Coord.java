@@ -1,7 +1,9 @@
 package pl.sda.models;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 
+@Embeddable
 public class Coord {
 
     @Column(name = "lat")

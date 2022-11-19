@@ -4,13 +4,13 @@
       "lon": 21.0175,
       "lat": 52.237
     },
-    "weather":[ {
+    "weather":{
       "temp": 5.96,
       "pressure": 1012,
       "humidity": 91,
       "wind_speed": 2.06,
       "wind_deg": 20
-    }],
+    },
     "city": {
       "name": "Warszawa",
       "country": "PL"
