@@ -1,6 +1,8 @@
 package pl.sda;
 
+import dao.ReadFromDB;
 import dao.SentToDB;
+import pl.sda.models.City;
 import pl.sda.models.GsonMapper;
 import pl.sda.models.JsonNode;
 import pl.sda.utils.ApplicationPropertiesProvider;
@@ -22,7 +24,10 @@ public class App {
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
 
         gsonJson.forEach(System.out::println);
-        SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
+      //  SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
+
+       final City cityChooceByUser =  ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
+        System.out.println(cityChooceByUser);
 
     }
 }

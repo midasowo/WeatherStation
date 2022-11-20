@@ -22,6 +22,7 @@ public class SentToDB {
 
             for (JsonNode jsonNode : gsonJson) {
                 entityManager.persist(jsonNode.getCity());
+                entityManager.persist(jsonNode.getWeather());
             }
             entityManager.getTransaction().commit();
         } catch (Exception e) {
