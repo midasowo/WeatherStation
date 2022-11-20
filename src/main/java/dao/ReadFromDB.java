@@ -17,7 +17,7 @@ public class ReadFromDB {
         System.out.println("Podaj miasto którego pogoda Cie interesuje");
         String cityQuery = scanner.nextLine();
 
-        City city = null;
+        City city;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -47,7 +47,7 @@ public class ReadFromDB {
             TypedQuery<Weather> typedQuery = entityManager.createQuery("""
                             SELECT weather FROM Weather weather
                             JOIN City city
-                            ON weather.cityId = city.ID
+                            ON weather.cityId = city.id
                             WHERE city.`name` = :name                                                                             
                             """,
                     Weather.class

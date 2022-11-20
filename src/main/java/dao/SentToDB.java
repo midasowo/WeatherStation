@@ -3,7 +3,9 @@ package dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import pl.sda.models.City;
 import pl.sda.models.JsonNode;
+import pl.sda.models.Weather;
 
 import java.util.List;
 import java.util.Properties;
@@ -21,8 +23,13 @@ public class SentToDB {
             entityManager.getTransaction().begin();
 
             for (JsonNode jsonNode : gsonJson) {
-                entityManager.persist(jsonNode.getCity());
-                entityManager.persist(jsonNode.getWeather());
+
+                City city = jsonNode.getCity();
+                Weather weather = jsonNode.getWeather();
+                weather.setCityId(city);
+
+                entityManager.persist(city);
+                entityManager.persist(weather);
             }
             entityManager.getTransaction().commit();
         } catch (Exception e) {
