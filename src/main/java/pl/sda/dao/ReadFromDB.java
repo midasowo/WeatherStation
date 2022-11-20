@@ -1,4 +1,4 @@
-package dao;
+package pl.sda.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -14,7 +14,7 @@ public class ReadFromDB {
 
     public static City loadCityByName(Properties properties){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj miasto którego pogoda Cie interesuje");
+        System.out.println("Podaj miasto:");
         String cityQuery = scanner.nextLine();
 
         City city;

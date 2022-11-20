@@ -1,4 +1,4 @@
-package dao;
+package pl.sda.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
