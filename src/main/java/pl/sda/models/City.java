@@ -2,6 +2,8 @@ package pl.sda.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "city")
 public class City {
@@ -10,6 +12,9 @@ public class City {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToMany(mappedBy = "cityId")
+    private List<Weather> weathers;
 
     @Column(name = "name")
     private String name;
@@ -26,7 +31,8 @@ public class City {
     public City() {
     }
 
-    public City(String name, String country, double lat, double lon) {
+    public City(Long id, String name, String country, double lat, double lon) {
+        this.id = id;
         this.name = name;
         this.country = country;
         this.lat = lat;
@@ -73,10 +79,20 @@ public class City {
         this.lon = lon;
     }
 
+    public List<Weather> getWeathers() {
+        return weathers;
+    }
+
+    public void setWeathers(List<Weather> weathers) {
+        this.weathers = weathers;
+    }
+
     @Override
     public String toString() {
         return "City{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", weathers=" + weathers +
+                ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", lat=" + lat +
                 ", lon=" + lon +

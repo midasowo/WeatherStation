@@ -11,7 +11,7 @@ public class Weather {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long weatherId;
 
-    @OneToOne
+    @ManyToOne(cascade = { CascadeType.PERSIST })
     @JoinColumn(name="city_id")
     private City cityId;
 
