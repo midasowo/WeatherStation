@@ -25,12 +25,12 @@ public class App {
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
 
 //        gsonJson.forEach(System.out::println);
-      //  SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
+        SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
 
 //       final City cityChooceByUser =  ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
 //        System.out.println(cityChooceByUser);
-        final Weather weatherByCityName =  ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
-        System.out.println(weatherByCityName);
+//        final Weather weatherByCityName =  ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
+//        System.out.println(weatherByCityName);
 
     }
 }
