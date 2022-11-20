@@ -12,7 +12,7 @@ public class SentToDB {
 
 
 
-    public static boolean sentFromJSonToDB(Properties properties, List<JsonNode> gsonJson){
+    public static void sentFromJSonToDB(Properties properties, List<JsonNode> gsonJson){
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -21,10 +21,9 @@ public class SentToDB {
             entityManager.getTransaction().begin();
 
             for (JsonNode jsonNode : gsonJson) {
-                entityManager.persist(jsonNode.getWeather());
+                entityManager.persist(jsonNode.getCity());
             }
             entityManager.getTransaction().commit();
-            return true;
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
             throw new RuntimeException(e);

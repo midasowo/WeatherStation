@@ -9,10 +9,10 @@ public class Weather {
     @Id
     @Column(name = "weather_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int weatherId;
+    private Long weatherId;
 
-    @OneToOne
-    @JoinColumn(name = "city_id")
+    @ManyToOne(cascade = { CascadeType.PERSIST })
+    @JoinColumn(name="city_id")
     private City cityId;
 
     @Column(name = "temperature")
@@ -33,12 +33,14 @@ public class Weather {
     @Column(name = "service")
     private String service;
 
-    public int getWeatherId() {
+    public long getWeatherId() {
         return weatherId;
     }
 
-    public Weather(double temperature, double pressure, double humidity, double windDeg, double windSpeed, String service) {
-        this.temp = temperature;
+    public Weather(Long weatherId, City cityId, double temp, double pressure, double humidity, double windDeg, double windSpeed, String service) {
+        this.weatherId = weatherId;
+        this.cityId = cityId;
+        this.temp = temp;
         this.pressure = pressure;
         this.humidity = humidity;
         this.windDeg = windDeg;
@@ -49,7 +51,7 @@ public class Weather {
     public Weather() {
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setWeatherId(long weatherId) {
         this.weatherId = weatherId;
     }
 
@@ -114,7 +116,7 @@ public class Weather {
         return "Weather{" +
                 "weatherId=" + weatherId +
                 ", cityId=" + cityId +
-                ", temperature=" + temp +
+                ", temp=" + temp +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
                 ", windDeg=" + windDeg +

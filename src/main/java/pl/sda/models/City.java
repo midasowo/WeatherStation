@@ -2,6 +2,8 @@ package pl.sda.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "city")
 public class City {
@@ -9,7 +11,10 @@ public class City {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+
+    @OneToMany(mappedBy = "cityId")
+    private List<Weather> weathers;
 
     @Column(name = "name")
     private String name;
@@ -17,22 +22,28 @@ public class City {
     @Column(name = "country")
     private String country;
 
-    @Embedded
-    private Coord coord;
+    @Column(name = "lat")
+    private double lat;
+
+    @Column(name = "lon")
+    private double lon;
 
     public City() {
     }
 
-    public City(String name, String country) {
+    public City(Long id, String name, String country, double lat, double lon) {
+        this.id = id;
         this.name = name;
         this.country = country;
+        this.lat = lat;
+        this.lon = lon;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -52,11 +63,39 @@ public class City {
         this.country = country;
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
+    public List<Weather> getWeathers() {
+        return weathers;
+    }
+
+    public void setWeathers(List<Weather> weathers) {
+        this.weathers = weathers;
+    }
+
     @Override
     public String toString() {
         return "City{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", weathers=" + weathers +
+                ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
                 '}';
     }
 }
