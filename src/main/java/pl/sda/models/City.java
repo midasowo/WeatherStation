@@ -90,7 +90,7 @@ public class City {
     @Override
     public String toString() {
         return "City{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", lat=" + lat +
                 ", lon=" + lon +
