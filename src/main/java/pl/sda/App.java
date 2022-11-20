@@ -15,7 +15,7 @@ public class App {
 
     public static void main(String[] args) throws IOException {
 
-//        sendAllJsonDatatoDB();
+        sendAllJsonDatatoDB();
 
         while (true) {
             Gui.showMenu();

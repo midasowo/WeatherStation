@@ -9,6 +9,7 @@ public class BusinessLogic {
     public static void handle(int choice) {
         if (choice == 1) {
             System.out.println("!!! Ten fragment do dopytania prowadzącego zajęcia !!!");
+            return;
         } else if (choice == 2) {
             final City cityChoiceByUser = ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
             System.out.println(cityChoiceByUser);

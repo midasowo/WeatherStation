@@ -12,8 +12,6 @@ import java.util.Properties;
 
 public class SentToDB {
 
-
-
     public static void sentFromJSonToDB(Properties properties, List<JsonNode> gsonJson){
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);

@@ -1,0 +1,66 @@
+[
+  {
+    "weather": {
+      "temp": 5.96,
+      "pressure": 1012,
+      "humidity": 91,
+      "windSpeed": 2.06,
+      "windDeg": 20,
+      "service": "WeatherStack"
+    },
+    "city": {
+      "name": "Warszawa",
+      "country": "PL",
+      "lon": 21.0175,
+      "lat": 52.237
+    }
+  },
+  {
+    "weather": {
+      "temp": 5.09,
+      "pressure": 1011,
+      "humidity": 76,
+      "windSpeed": 1.79,
+      "windDeg": 22,
+      "service": "WeatherStack"
+    },
+    "city": {
+      "name": "Lodz",
+      "country": "PL",
+      "lon": 19.4572,
+      "lat": 51.7594
+    }
+  },
+  {
+    "weather": {
+      "temp": 5.67,
+      "pressure": 1013,
+      "humidity": 97,
+      "windSpeed": 1.03,
+      "windDeg": 30,
+      "service": "WeatherStack"
+    },
+    "city": {
+      "name": "Gdansk",
+      "country": "PL",
+      "lon": 18.6383,
+      "lat": 54.3722
+    }
+  },
+  {
+    "weather": {
+      "temp": 7.62,
+      "pressure": 1006,
+      "humidity": 117,
+      "windSpeed": 3.23,
+      "windDeg": 25,
+      "service": "WeatherStack"
+    },
+    "city": {
+      "name": "Krakow",
+      "country": "PL",
+      "lon": 19.9445,
+      "lat": 50.0497
+    }
+  }
+]
