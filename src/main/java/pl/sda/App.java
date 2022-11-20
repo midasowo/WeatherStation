@@ -5,6 +5,7 @@ import dao.SentToDB;
 import pl.sda.models.City;
 import pl.sda.models.GsonMapper;
 import pl.sda.models.JsonNode;
+import pl.sda.models.Weather;
 import pl.sda.utils.ApplicationPropertiesProvider;
 import pl.sda.utils.FileReader;
 
@@ -23,11 +24,13 @@ public class App {
         //Map json to object
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
 
-        gsonJson.forEach(System.out::println);
+//        gsonJson.forEach(System.out::println);
       //  SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7573592Properties(), gsonJson);
 
-       final City cityChooceByUser =  ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
-        System.out.println(cityChooceByUser);
+//       final City cityChooceByUser =  ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
+//        System.out.println(cityChooceByUser);
+        final Weather weatherByCityName =  ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7573592Properties());
+        System.out.println(weatherByCityName);
 
     }
 }
