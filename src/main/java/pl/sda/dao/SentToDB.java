@@ -4,9 +4,14 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import pl.sda.models.City;
+import pl.sda.models.GsonMapper;
 import pl.sda.models.JsonNode;
 import pl.sda.models.Weather;
+import pl.sda.utils.ApplicationPropertiesProvider;
+import pl.sda.utils.FileReader;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
@@ -37,4 +42,12 @@ public class SentToDB {
             entityManagerFactory.close();
         }
     }
+    public static void sendAllJsonDatatoDB() throws IOException {
+        FileReader fileReader = new FileReader();
+        File file = fileReader.readFile();
+        GsonMapper gsonMapper = new GsonMapper();
+        List<JsonNode> gsonJson = gsonMapper.fromJson(file);
+        SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7578590Properties(), gsonJson);
+    }
+
 }
