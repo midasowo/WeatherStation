@@ -22,7 +22,7 @@ public class App {
             Gui.showMenu();
             int choice = Gui.getUserChoice();
             if (choice == 4) {
-                RemoveFromDB.removeAllEntitiesFromDBAfterWork(ApplicationPropertiesProvider.getSql7578590Properties());
+                RemoveFromDB.removeAllDatainDB(ApplicationPropertiesProvider.getSql7578590Properties());
                 break;
             }
             BusinessLogic.handle(choice);
