@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class ApplicationPropertiesProvider {
 
-    private static final Properties sql7573592Properties = loadProperties("/sql7573592.properties");
+    private static final Properties sql7578590Properties = loadProperties("/sql7578590.properties");
 
     private static Properties loadProperties(String resource) {
         final var properties = new Properties();
@@ -23,8 +23,8 @@ public class ApplicationPropertiesProvider {
         throw new UnsupportedOperationException();
     }
 
-    public static Properties getSql7573592Properties() {
-        return sql7573592Properties;
+    public static Properties getSql7578590Properties() {
+        return sql7578590Properties;
     }
 
 
