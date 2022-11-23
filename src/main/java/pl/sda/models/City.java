@@ -3,6 +3,7 @@ package pl.sda.models;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "city")
@@ -95,5 +96,18 @@ public class City {
                 ", lat=" + lat +
                 ", lon=" + lon +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof City)) return false;
+        City city = (City) o;
+        return Double.compare(city.lat, lat) == 0 && Double.compare(city.lon, lon) == 0 && Objects.equals(name, city.name) && Objects.equals(country, city.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, country, lat, lon);
     }
 }

@@ -1,11 +1,11 @@
 [
   {
     "weather": {
-      "temp": 5.96,
-      "pressure": 1012,
-      "humidity": 91,
-      "windSpeed": 2.06,
-      "windDeg": 20,
+      "temp": 9.96,
+      "pressure": 1002,
+      "humidity": 41,
+      "windSpeed": 4.06,
+      "windDeg": 26,
       "service": "OpenWeather"
     },
     "city": {
@@ -17,11 +17,11 @@
   },
   {
     "weather": {
-      "temp": 5.09,
-      "pressure": 1011,
-      "humidity": 76,
-      "windSpeed": 1.79,
-      "windDeg": 22,
+      "temp": 5.18,
+      "pressure": 1024,
+      "humidity": 71,
+      "windSpeed": 1.29,
+      "windDeg": 21.4,
       "service": "OpenWeather"
     },
     "city": {
@@ -33,11 +33,11 @@
   },
   {
     "weather": {
-      "temp": 5.67,
+      "temp": 5.17,
       "pressure": 1013,
       "humidity": 97,
-      "windSpeed": 1.03,
-      "windDeg": 30,
+      "windSpeed": 1.23,
+      "windDeg": 32,
       "service": "OpenWeather"
     },
     "city": {

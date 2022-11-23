@@ -17,7 +17,7 @@ import java.util.Properties;
 
 public class SentToDB {
 
-    public static void sentFromJSonToDB(Properties properties, List<JsonNode> gsonJson){
+    public static void prepareDataToSendToDB(Properties properties, List<JsonNode> gsonJson){
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -42,12 +42,15 @@ public class SentToDB {
             entityManagerFactory.close();
         }
     }
-    public static void sendAllJsonDatatoDB() throws IOException {
+    public static void sentFromJSonToDB() throws IOException {
         FileReader fileReader = new FileReader();
-        File file = fileReader.readFile();
+        File file = fileReader.readFileFromOpenWeather();
+        File file2 = fileReader.readFileFromWeatherStack();
         GsonMapper gsonMapper = new GsonMapper();
         List<JsonNode> gsonJson = gsonMapper.fromJson(file);
-        SentToDB.sentFromJSonToDB(ApplicationPropertiesProvider.getSql7578590Properties(), gsonJson);
+        List<JsonNode> gsonJson2 = gsonMapper.fromJson(file2);
+        SentToDB.prepareDataToSendToDB(ApplicationPropertiesProvider.getSql7578590Properties(), gsonJson);
+        SentToDB.prepareDataToSendToDB(ApplicationPropertiesProvider.getSql7578590Properties(), gsonJson2);
     }
 
 }

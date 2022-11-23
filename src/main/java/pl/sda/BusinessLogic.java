@@ -7,6 +7,7 @@ import pl.sda.models.Weather;
 import pl.sda.utils.ApplicationPropertiesProvider;
 
 import java.io.IOException;
+import java.util.List;
 
 public class BusinessLogic {
     private static boolean acc = true;
@@ -14,14 +15,13 @@ public class BusinessLogic {
         if (choice == 1) {
             if (acc) {
                 acc = false;
-                SentToDB.sendAllJsonDatatoDB();
+                SentToDB.sentFromJSonToDB();
             }
             else {
                 System.out.println("Wybór nieaktywny");
             }
         } else if (choice == 2) {
-            final City cityChoiceByUser = ReadFromDB.loadCityByName(ApplicationPropertiesProvider.getSql7578590Properties());
-            System.out.println(cityChoiceByUser);
+            ReadFromDB.loadCitiesFromDB(ApplicationPropertiesProvider.getSql7578590Properties());
         } else if (choice == 3) {
             final Weather weatherByCityName = ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7578590Properties());
             System.out.println(weatherByCityName);
