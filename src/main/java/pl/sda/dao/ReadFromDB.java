@@ -29,12 +29,12 @@ public class ReadFromDB {
         city.stream().distinct().forEach(System.out::println);
     }
 
-    public static Weather weatherAndCityByName(Properties properties){
+    public static List<Weather> weatherAndCityByName(Properties properties){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj miasto którego pogoda Cie interesuje");
         String cityQuery = scanner.nextLine();
 
-        Weather weather;
+        List<Weather> weather;
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -48,7 +48,7 @@ public class ReadFromDB {
                     Weather.class
             );
             typedQuery.setParameter("name", cityQuery);
-            weather=typedQuery.getSingleResult();
+            weather=typedQuery.getResultList();
 
         } finally {
             entityManager.close();

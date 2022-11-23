@@ -12,7 +12,6 @@ public class Weather {
     private Long weatherId;
 
     @ManyToOne
-    //(cascade = { CascadeType.PERSIST })
     @JoinColumn(name="city_id")
     private City cityId;
 

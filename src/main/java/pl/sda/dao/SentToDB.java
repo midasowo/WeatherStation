@@ -3,10 +3,7 @@ package pl.sda.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import pl.sda.models.City;
-import pl.sda.models.GsonMapper;
-import pl.sda.models.JsonNode;
-import pl.sda.models.Weather;
+import pl.sda.models.*;
 import pl.sda.utils.ApplicationPropertiesProvider;
 import pl.sda.utils.FileReader;
 
@@ -29,10 +26,13 @@ public class SentToDB {
 
                 City city = jsonNode.getCity();
                 Weather weather = jsonNode.getWeather();
+                //WeatherAvg weatherAvg = jsonNode.getWeatherAvg();
                 weather.setCityId(city);
+                //weatherAvg.setCityId(city);
 
                 entityManager.persist(city);
                 entityManager.persist(weather);
+                //entityManager.persist(weatherAvg);
             }
             entityManager.getTransaction().commit();
         } catch (Exception e) {

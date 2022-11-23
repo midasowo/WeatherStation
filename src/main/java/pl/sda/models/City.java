@@ -17,6 +17,9 @@ public class City {
     @OneToMany(mappedBy = "cityId")
     private List<Weather> weathers;
 
+    @OneToMany(mappedBy = "cityId")
+    private List<WeatherAvg> weathersavg;
+
     @Column(name = "name")
     private String name;
 
@@ -32,8 +35,9 @@ public class City {
     public City() {
     }
 
-    public City(Long id, String name, String country, double lat, double lon) {
+    public City(Long id, List<WeatherAvg> weathersavg, String name, String country, double lat, double lon) {
         this.id = id;
+        this.weathersavg = weathersavg;
         this.name = name;
         this.country = country;
         this.lat = lat;

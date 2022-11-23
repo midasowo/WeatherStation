@@ -23,7 +23,7 @@ public class BusinessLogic {
         } else if (choice == 2) {
             ReadFromDB.loadCitiesFromDB(ApplicationPropertiesProvider.getSql7578590Properties());
         } else if (choice == 3) {
-            final Weather weatherByCityName = ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7578590Properties());
+            final List<Weather> weatherByCityName = ReadFromDB.weatherAndCityByName(ApplicationPropertiesProvider.getSql7578590Properties());
             System.out.println(weatherByCityName);
         }
     }
