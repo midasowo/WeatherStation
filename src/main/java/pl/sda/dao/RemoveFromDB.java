@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class RemoveFromDB {
 
-    public static void removeAllDatainDB(Properties properties){
+    public static void removeAllDataInDB(Properties properties){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("WeatherStationPU", properties);
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try{
